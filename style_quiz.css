@@ -1,0 +1,44 @@
+body {
+    background-image: url(fond-ecran-quiz.jpg);
+    background-color: pink;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+header {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.questionnaire {
+    display: flex;
+    color: white;
+}
+
+input { 
+    color:grey; 
+    background-color: whitesmoke; 
+    font-size: 20px; 
+} 
+
+.affichagePseudo {
+    color: blueviolet;
+    display: flex;
+    vertical-align: left;
+    justify-content: left;
+}
+
+.alignCenter {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+/*https://waytolearnx.com/2019/06/personnaliser-les-boutons-radio-avec-css.html*/
+

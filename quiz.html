@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_quiz.css">
+    <title>quiz | DWWM6</title>
+
+    <script type="text/javascript">
+
+        function ecrireLocalStorage() {
+            if (typeof localStorage != "undefined" && JSON) {
+                var pseudo = {
+                    blaze: document.getElementById("blaze").value
+                };
+                localStorage.setItem("identite",
+                    JSON.stringify(pseudo));
+                alert("enregistrement dans le local storage effectué");
+
+            } else {
+                alert("le local storage n'est pas supporté");
+            }
+
+        };
+
+    </script>
+
+</head>
+
+<body>
+
+    <main>
+
+        <script type="text/javascript">console.log(document.getElementById('data').innerText)</script>
+
+        <header class="alignCenter">
+
+            <h1>Un petit quiz pour voir si vous êtes calé sur les balises HTML</h1>
+
+        </header>
+
+        
+
+        <section>
+
+
+
+            <h2>Voici la question : </h2>
+
+            <div class="alignCenter">
+
+
+
+                <form name="listeReponses" class="questionnaire">
+                    Que signifit la balise <code>code</code>:<br />
+                    <label><input type="radio" name="reponses" value="reponse1">rien</input></label><br />
+                    <label><input type="radio" name="reponses" value="reponse2">secret</input></label><br />
+                    <label><input type="radio" name="reponses" value="reponse3">du code</input></label><br />
+                    <label><input type="radio" name="reponses" value="reponse4">pas grand chose</input></label><br />
+                    <input type="button" onclick="selectionnerReponse ('Veuillez selectionner votre réponse')"
+                        value="validation" />
+                </form>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <script type="text/javascript">
+                alert("affichage du script");
+            </script>
+
+            <table class="affichagePseudo">
+
+                <tr>
+
+                    <td>Pseudo</td>
+                    <td><input type="text" id="blaze" value="" size="10" /></td>
+
+                </tr>
+
+            </table>
+
+            <br />
+            <form class="affichagePseudo">
+
+                <input type="button" id="boutonEcriture" value="Ecriture" onclick="ecrireLocalStorage();" />
+                <br />
+                <input type="button" id="boutonLecture" value="Lecture" />
+
+            </form>
+
+            <script type="text/javascript">
+
+                document.getElementById('boutonLecture').onclick
+                    = function () {
+                        if (typeof localStorage != "undefined" && JSON) {
+                            var pseudo
+                                = JSON
+                                    .parse(localStorage
+                                        .getItem("identite"));
+                            document.getElementById("blaze").value
+                                = pseudo.blaze; //
+                            alert("lecture effectuée");
+                        }
+                        else {
+                            alert("localStorage n'est pas supporté");
+                        }
+                    };
+
+            </script>
+
+        </section>
+
+    </main>
+
+    <script src="dynamisme_quiz.js"></script>
+
+</body>
+
+</html>
